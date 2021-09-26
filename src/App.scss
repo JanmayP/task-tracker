@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400&display=swap');
+
+$bodyFont: 'Quicksand', sans-serif;
+
+.App {
+  margin: 0 25px 50px 25px;
+
+  h1 {
+    text-shadow: 1px 1px black;
+  }
+}
+
+body{
+  color: white;
+  background: linear-gradient(200deg, #c73378e0, #ff7cc4, #3ebefae8 );
+  background-size: 200% 200%;
+  font-family: $bodyFont;
+  animation: gradient 8s ease infinite;
+  overflow-x: hidden;
+
+}
+
+@keyframes gradient {
+  0% {
+      background-position: 0% 0%;
+  }
+  50% {
+      background-position: 100% 0%;
+  }
+  100% {
+      background-position: 0% 0%;
+  }
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+
+  button {
+    color: white;
+    font-family: $bodyFont;
+    font-size: 15px;
+    backdrop-filter: blur(8px) saturate(169%);
+    -webkit-backdrop-filter: blur(8px) saturate(169%);
+    background-color: rgba(53, 53, 53, 0.68);
+    border: 1px solid black;
+    border-radius: 2px;
+    padding: 5px;
+    width: 80px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    transition: 0.45s;
+    background: black;
+  }
+
+  .task-form {
+    font-family: $bodyFont;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    text-align: left;
+
+    backdrop-filter: blur(8px) saturate(169%);
+    -webkit-backdrop-filter: blur(8px) saturate(169%);
+    background-color: rgba(53, 53, 53, 0.68);
+    border: 1px solid black;
+    border-radius: 8px;
+
+    width: 400px;
+    height: 650px;
+    padding: 0 30px 20px 30px;
+
+    .task-form-remove {
+      text-align: center;
+    }
+
+    .remove-task{
+      cursor: pointer;
+    }
+
+    .remove-task:hover {
+      color: black;
+    }
+
+    input {
+      background: none;
+      border: 1px solid white;
+      border-radius: 8px;
+      padding: 10px;
+      color: white;
+      font-size: 15px;
+      font-family: inherit;
+    }
+
+    .form-btn{
+      background: none;
+      color: white;
+      border: 1px solid white;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 15px;
+      font-family: inherit;
+    }
+
+    .form-btn:hover{
+      transition: 0.45s;
+      background: black;
+    }
+
+  }
+}
+
+.task-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  gap: 1px;
+  width: 75%;
+  margin: auto;
+  min-height: 500px;
+}
+
+.task-column {
+  backdrop-filter: blur(8px) saturate(169%);
+    -webkit-backdrop-filter: blur(8px) saturate(169%);
+    background-color: rgba(53, 53, 53, 0.68);
+    border-radius: 2px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+  
+  min-height: 800px;
+  padding: 20px;
+  width: 33%;
+  margin: auto;
+
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: top;
+  gap: 10px;
+}
+
+.task {
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 0 10px 0 10px;
+  height: auto;
+
+  .task-text{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .task-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+
+    .show-info:hover{
+      cursor: pointer;
+      color: black;
+    }
+
+    .remove-task:hover{
+      cursor: pointer;
+      color: black;
+    }
+  }
+}
+
+.task-info {
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 15px;
+  height: auto;
+  text-align: center;
+}
+
+.task-subtasks{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+
+
+  .task-subtask {
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 15px;
+    height: auto;
+    text-align: left;
+  }
+}
