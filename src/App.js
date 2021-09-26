@@ -56,17 +56,11 @@ function App() {
 
   
   const [showBody, setShowBody] = useState(false)
-  const [showSubTasks, setShowSubTasks] = useState(false)
   const [currentTaskId, setCurrentTaskId] = useState(-1)
   const [currentTask, setCurrentTask] = useState({})
 
   const showInfo = (task) => {
-    if (task.info !== "" ) {
-      setShowBody(true)
-    }
-    if (task.subTasks !== ["","",""] ) {
-      setShowSubTasks(true)
-    }
+    
     setCurrentTaskId(task.id)
     if (currentTaskId === task.id || !showBody) {
       setShowBody(!showBody)
@@ -103,7 +97,7 @@ function App() {
         </div>
         <div className="task-column">
           <h3>Sub Tasks</h3><br/>
-          {showSubTasks ? <SubTasks task={currentTask} />
+          {showBody ? <SubTasks task={currentTask} />
           : 
           <p>Nothing to show!</p>}
         </div>
