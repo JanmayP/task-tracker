@@ -90,17 +90,18 @@ function App() {
             ))}
         </div>
         <div className="task-column">
-          <h3>Info</h3><br/>
-          {showBody ? <TaskBody task={currentTask}/>
-          : 
-          <p>Nothing to show!</p>}
-        </div>
-        <div className="task-column">
           <h3>Sub Tasks</h3><br/>
           {showBody ? <SubTasks task={currentTask} />
           : 
           <p>Nothing to show!</p>}
         </div>
+        <div className="task-column">
+          <h3>Info</h3><br/>
+          {showBody ? <TaskBody task={currentTask}/>
+          : 
+          <p>Nothing to show!</p>}
+        </div>
+        
       </div>
     </div>
   );
