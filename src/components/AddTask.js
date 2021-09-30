@@ -36,19 +36,19 @@ const AddTask = ({onAdd, showTaskForm}) => {
                 <label>Task </label>
                 <input type='text'  placeholder='Add Task' value={text} onChange={(e) => setText(e.target.value)} />
             <br></br>
-                <label>Subtask </label>
+                <label>Subtask 1 </label>
                 <input type='text' id="sub-tasks" placeholder='Add a subtask' value={subTask1} onChange={(e) => setSubTask1(e.target.value)} />
             <br></br>
-                <label>Subtask </label>
+                <label>Subtask 2</label>
                 <input type='text' id="sub-tasks" placeholder='Add a subtask' value={subTask2} onChange={(e) => setSubTask2(e.target.value)} />
             <br></br>
-                <label>Subtask </label>
+                <label>Subtask 3</label>
                 <input type='text' id="sub-tasks" placeholder='Add a subtask' value={subTask3} onChange={(e) => setSubTask3(e.target.value)} />
             <br></br>
                 <label>Info </label>
                 <input type='text' id="info-box" placeholder='Add Info' value={body} onChange={(e) => setBody(e.target.value)} />
             <br></br>
-            <input type='submit' value='Add' className='form-btn'/>
+            <input type='submit' value='ADD' className='form-btn'/>
         </form>
     )
 }
