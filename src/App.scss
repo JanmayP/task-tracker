@@ -196,6 +196,9 @@ header {
 
 
   .task-subtask {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     border: 1px solid white;
     border-radius: 5px;
     padding: 15px;
