@@ -12,7 +12,7 @@ const SubTasks = ({task, markDone}) => {
             : <span >{subTask.text} </span>
           }
           
-          <FaTimes  className="remove-task" size={18} onClick={(e) => {markDone(e, subTask, task)}} />
+          <FaTimes  className="remove-task" size={18} onClick={(e) => {markDone(e, subTask)}} />
         </div>
       )) 
       : <p>Nothing to show!</p>}

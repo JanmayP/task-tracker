@@ -67,9 +67,24 @@ function App() {
   const [currentTaskId, setCurrentTaskId] = useState(-1)
   const [currentTask, setCurrentTask] = useState({})
 
+  //yucky timeout function to force a re-render on subtasks
+  const switchSubTasks = () => {
+    setTimeout(() => {
+      setShowBody(true)
+    }, 150)
+  }
+
   // Change view state of subtasks and info
   const showInfo = (task) => {
-    setCurrentTaskId(task.id)
+    if (currentTaskId === -1) {
+      setCurrentTaskId(task.id)
+      setShowBody(true)
+    }
+    if (currentTaskId !== task.id) {
+      setCurrentTaskId(task.id)
+      setShowBody(false)
+      switchSubTasks()
+    }
     if (currentTaskId === task.id || !showBody) {
       setShowBody(!showBody)
     }
@@ -77,7 +92,7 @@ function App() {
   }
 
   // Mark a subtask as done and update to state/LS
-  const markDone = (e, subTask, activeTask) => {
+  const markDone = (e, subTask) => {
 
     // Change styling to have strike-through
     let subTaskDone = e.target.previousSibling
