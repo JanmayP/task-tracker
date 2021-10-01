@@ -17,7 +17,7 @@ const AddTask = ({onAdd, showTaskForm}) => {
             return
         }
 
-        const subTasks = [subTask1, subTask2, subTask3]
+        const subTasks = [{text: subTask1, done: false}, {text: subTask2, done: false}, {text: subTask3, done:false}]
 
         onAdd({text, body, subTasks})
             
