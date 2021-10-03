@@ -24,7 +24,7 @@ function App() {
       id: 0,
       text: "Click on the arrow for task info",
       body: "Task information is displayed here",
-      subTasks: [{text:"Each task can have up to 3 subtasks" , done: false}, {text: "Subtasks can be marked done", done: false}, {text: "All tasks are stored in local storage", done: false}]
+      subTasks: [{text:"Each task can have multiple subtasks" , done: false}, {text: "Subtasks can be marked as done", done: false}, {text: "All data is stored in local storage", done: false}]
     }]
   }
 
@@ -66,12 +66,14 @@ function App() {
   const [showBody, setShowBody] = useState(false)
   const [currentTaskId, setCurrentTaskId] = useState(-1)
   const [currentTask, setCurrentTask] = useState({})
+  const [bodyText, setBodyText] = useState("Nothing to show!")
 
   //yucky timeout function to force a re-render on subtasks
   const switchSubTasks = () => {
     setTimeout(() => {
       setShowBody(true)
-    }, 150)
+      setBodyText("Nothing to show!")
+    }, 50)
   }
 
   // Change view state of subtasks and info
@@ -82,6 +84,7 @@ function App() {
     }
     if (currentTaskId !== task.id) {
       setCurrentTaskId(task.id)
+      setBodyText("")
       setShowBody(false)
       switchSubTasks()
     }
@@ -95,9 +98,12 @@ function App() {
   const markDone = (e, subTask) => {
 
     // Change styling to have strike-through
-    let subTaskDone = e.target.previousSibling
-    if (subTaskDone === null) {
+    let subTaskDone = e.target
+    
+    if (subTaskDone.nodeName === "svg") {
       subTaskDone = e.target.parentNode.previousSibling
+    } else if (subTaskDone.nodeName === "path") {
+      subTaskDone = e.target.parentNode.parentNode.previousSibling
     }
     if (subTaskDone.style.textDecorationLine !== "line-through") {
       subTaskDone.style.textDecorationLine = "line-through"
@@ -121,6 +127,38 @@ function App() {
     updateTasks(tasks)
   }
 
+  // Add subtask to current task
+  const addSubTask = (subTask) => {
+    tasks.forEach((task) => {
+      if (task.id === currentTaskId) {
+        task.subTasks.push(subTask)
+      }
+    })
+    setTasks(tasks)
+    updateTasks(tasks)
+  }
+
+  // Delete subtask 
+  const delSubTask = (subTask) => {
+    tasks.forEach((task) => {
+      if (task.id === currentTaskId) {
+        let subIndex = -1
+        task.subTasks.forEach ((sub, index) => {
+          if (sub.text === subTask.text) {
+            subIndex = index
+          }
+        })
+        task.subTasks.splice(subIndex, 1)
+        console.log(task.subTasks)
+      }
+    })
+    setTasks(tasks)
+    updateTasks(tasks)
+    setBodyText("")
+    setShowBody(false)
+    switchSubTasks()
+  }
+
   return (
     <div className="App">
       <header>
@@ -140,9 +178,9 @@ function App() {
         </div>
         <div className="task-column">
           <h3>Sub Tasks</h3><br/>
-          {showBody ? <SubTasks task={currentTask} markDone = {markDone} />
+          {showBody ? <SubTasks task={currentTask} markDone = {markDone} addSubTask={addSubTask} delSubTask = {delSubTask} />
           : 
-          <p>Nothing to show!</p>}
+          <p>{bodyText}</p>}
         </div>
         <div className="task-column">
           <h3>Info</h3><br/>

@@ -26,7 +26,6 @@ const AddTask = ({onAdd, showTaskForm}) => {
         setSubTask1("")
         setSubTask2("")
         setSubTask3("")
-        
     }
 
     return (
