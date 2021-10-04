@@ -35,7 +35,7 @@ const SubTasks = ({task, markDone, addSubTask, delSubTask}) => {
           }
           <div className="subtask-buttons">
             <FaCheck  className="remove-subtask" size={18} onClick={(e) => {markDone(e, subTask)}} />
-            <FaTimes  className="remove-subtask" size={19} onClick={(e) => {delSubTask(e, subTask)}} />
+            <FaTimes  className="remove-subtask" size={19} onClick={(e) => {delSubTask(subTask)}} />
           </div>
         </div>
       )) 

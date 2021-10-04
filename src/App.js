@@ -142,21 +142,20 @@ function App() {
   const delSubTask = (subTask) => {
     tasks.forEach((task) => {
       if (task.id === currentTaskId) {
-        let subIndex = -1
+        let subIndex 
         task.subTasks.forEach ((sub, index) => {
           if (sub.text === subTask.text) {
             subIndex = index
           }
         })
         task.subTasks.splice(subIndex, 1)
-        console.log(task.subTasks)
+        setTasks(tasks)
+        updateTasks(tasks)
+        setBodyText("")
+        setShowBody(false)
+        switchSubTasks()
       }
     })
-    setTasks(tasks)
-    updateTasks(tasks)
-    setBodyText("")
-    setShowBody(false)
-    switchSubTasks()
   }
 
   return (
