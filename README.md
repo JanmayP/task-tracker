@@ -1,8 +1,12 @@
 # Task Tracker made in React 
 This is a UI-based task tracker app made with React components. 
 
-## Hierarchial Task Structure
-All tasks support the addition of upto 3 subtasks. Tasks are saved to local storage.
+## Purpose 
+I created this project to solidify my React and Sass skills. I also wanted to implement a task tracker that is a little more fleshed out than a minimal one.
+
+## Task Structure and Storage
+All tasks support multiple subtasks to be added/deleted/marked as done. 
+This app works without a backend. All information is stored in localstorage (in the browser) and persists when the window is closed. 
 
 ## Technology Used 
 + React
@@ -12,4 +16,5 @@ All tasks support the addition of upto 3 subtasks. Tasks are saved to local stor
 Live link: https://elastic-darwin-d8c00e.netlify.app/
 
 ## Functionality in the works
-Adding task start and finish time functionality is currently in the works. 
++ Editing tasks/subtasks/task info
++ Task start and finish/due time
