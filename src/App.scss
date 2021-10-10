@@ -75,7 +75,7 @@ header {
     }
 
     input {
-      background: none;
+      background: rgb(46, 46, 46);
       border: 1px solid white;
       border-radius: 8px;
       padding: 10px;
@@ -85,7 +85,7 @@ header {
     }
 
     .form-btn{
-      background: #c73378e0;
+      background: #00a2ffe0;
       color: white;
       border: 1px solid black;
       padding: 10px;
@@ -137,6 +137,7 @@ header {
   border-radius: 5px;
   padding: 0 10px 0 10px;
   height: auto;
+  background: rgb(46, 46, 46);
 
   .task-text{
     display: flex;
@@ -176,6 +177,7 @@ header {
   flex-direction: column;
   justify-content: center;
   gap: 15px;
+  
 
 
   .task-subtask {
@@ -187,6 +189,7 @@ header {
     padding: 15px;
     height: auto;
     text-align: left;
+    background: rgb(46, 46, 46);
 
     .subtask-buttons {
       display: flex;

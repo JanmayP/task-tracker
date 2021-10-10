@@ -5,7 +5,7 @@ const Task = ({task, onDelete, showInfo, showBody, currentTaskId}) => {
   
   let color = "white"
   if (showBody && (currentTaskId === task.id)) {
-    color = "black"
+    color = "aqua"
   }
 
   return (
