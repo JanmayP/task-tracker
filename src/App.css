@@ -1,38 +1,302 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400&display=swap");
 .App {
+  margin: 0 25px 50px 25px;
+}
+
+.App h1 {
+  text-shadow: 1px 1px black;
+}
+
+body {
+  color: white;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#d16ba5), color-stop(#c777b9), color-stop(#ba83ca), color-stop(#aa8fd8), color-stop(#9a9ae1), color-stop(#8aa7ec), color-stop(#79b3f4), color-stop(#69bff8), color-stop(#52cffe), color-stop(#41dfff), color-stop(#46eefa), to(#5ffbf1));
+  background-image: linear-gradient(to right bottom, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+  background-size: 100% 100%;
+  font-family: "Quicksand", sans-serif;
+  overflow-x: hidden;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px;
+}
+
+header button {
+  color: white;
+  font-family: "Quicksand", sans-serif;
+  font-size: 15px;
+  backdrop-filter: blur(8px) saturate(169%);
+  -webkit-backdrop-filter: blur(8px) saturate(169%);
+  background-color: rgba(53, 53, 53, 0.68);
+  border: 1px solid black;
+  border-radius: 2px;
+  padding: 5px;
+  width: 80px;
+  cursor: pointer;
+}
+
+header button:hover {
+  -webkit-transition: 0.45s;
+  transition: 0.45s;
+  background: black;
+}
+
+header .task-form {
+  font-family: "Quicksand", sans-serif;
+  font-size: 18px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 5px;
+  text-align: left;
+  backdrop-filter: blur(8px) saturate(169%);
+  -webkit-backdrop-filter: blur(8px) saturate(169%);
+  background-color: rgba(53, 53, 53, 0.68);
+  border: 1px solid black;
+  border-radius: 8px;
+  width: 400px;
+  height: 650px;
+  padding: 0 30px 20px 30px;
+}
+
+header .task-form .task-form-remove {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+header .task-form .remove-task {
+  cursor: pointer;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+header .task-form .remove-task:hover {
+  color: black;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+header .task-form input {
+  background: #2e2e2e;
+  border: 1px solid white;
+  border-radius: 8px;
+  padding: 10px;
+  color: white;
+  font-size: 15px;
+  font-family: inherit;
+}
+
+header .task-form .form-btn {
+  background: #00a2ffe0;
+  color: white;
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 15px;
+  font-family: inherit;
+}
+
+header .task-form .form-btn:hover {
+  -webkit-transition: 0.45s;
+  transition: 0.45s;
+  border: 1px solid white;
+  background: black;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.task-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 1px;
+  width: 75%;
+  margin: auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.task-column {
+  backdrop-filter: blur(8px) saturate(169%);
+  -webkit-backdrop-filter: blur(8px) saturate(169%);
+  background-color: rgba(53, 53, 53, 0.68);
+  border-radius: 2px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  min-height: 800px;
+  padding: 20px;
+  width: 33%;
+  border: 1px solid black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: top;
+      -ms-flex-align: top;
+          align-items: top;
+  gap: 10px;
 }
+
+.task {
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 0 10px 0 10px;
+  height: auto;
+  background: #2e2e2e;
+}
+
+.task .task-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.task .task-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 10px;
+}
+
+.task .task-buttons .show-info:hover {
+  cursor: pointer;
+  color: black;
+}
+
+.task .task-buttons .remove-task:hover {
+  cursor: pointer;
+  color: black;
+}
+
+.task-info {
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 15px;
+  height: auto;
+  text-align: left;
+}
+
+.task-subtasks {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 15px;
+}
+
+.task-subtasks .task-subtask {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 15px;
+  height: auto;
+  text-align: left;
+  background: #2e2e2e;
+}
+
+.task-subtasks .task-subtask .subtask-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 5px;
+}
+
+.remove-subtask {
+  cursor: pointer;
+}
+
+.remove-subtask :hover {
+  color: black;
+}
+
+.add-subtask {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border: none;
+  padding: 15px;
+  height: auto;
+  text-align: left;
+  gap: 10px;
+}
+
+.add-subtask input {
+  background: none;
+  color: white;
+  padding: 5px;
+  border: solid 1px white;
+  border-radius: 4px;
+}
+
+.add-subtask .form-btn {
+  background: black;
+  color: white;
+  border: 1px solid black;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  font-family: inherit;
+}
+/*# sourceMappingURL=App.css.map */
